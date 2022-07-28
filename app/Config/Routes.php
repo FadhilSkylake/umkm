@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/daftar', 'Daftar::index');
 $routes->get('/daftar/(:any)', 'Daftar::detail/$1');
+$routes->get('/daftar/edit', 'Daftar::edit');
 
 /*
  * --------------------------------------------------------------------
