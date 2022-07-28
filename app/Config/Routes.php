@@ -37,8 +37,8 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/daftar', 'Daftar::index');
+$routes->get('/daftar/edit/(:segment)', 'Daftar::edit/$1');
 $routes->get('/daftar/(:any)', 'Daftar::detail/$1');
-$routes->get('/daftar/edit', 'Daftar::edit');
 
 /*
  * --------------------------------------------------------------------

@@ -110,12 +110,12 @@ class Daftar extends BaseController
         return redirect()->to('/pendaftaran');
     }
 
-    public function edit()
+    public function edit($slug)
     {
         $data = [
             'title' => 'Form Edit Pendaftar',
             'validation' => \Config\Services::validation(),
-            // 'daftar' => $this->daftarModel->getDaftar($slug)
+            'daftar' => $this->daftarModel->getDaftar($slug)
         ];
 
         return view('/edit', $data);
