@@ -19,7 +19,7 @@ class Daftar extends BaseController
             'daftar' => $this->daftarModel->getDaftar()
         ];
 
-        return view('index', $data);
+        return view('back/index', $data);
     }
 
     public function detail($slug)
@@ -34,7 +34,7 @@ class Daftar extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Nama Pendaftar'   . $slug .  ' tidak ditemukan.');
         }
 
-        return view('detail', $data);
+        return view('back/detail', $data);
     }
 
     public function create()
@@ -118,34 +118,34 @@ class Daftar extends BaseController
             'daftar' => $this->daftarModel->getDaftar($slug)
         ];
 
-        return view('/edit', $data);
+        return view('back/edit', $data);
     }
 
     public function update($id)
     {
-        $daftarLama = $this->pendaftaranModel->getDaftar($this->request->getVar('slug'));
-        if ($daftarLama['nama'] == $this->request->getVar('nama')) {
+        $daftarLama = $this->daftarModel->getDaftar($this->request->getVar('slug'));
+        if ($daftarLama['nama_lengkap'] == $this->request->getVar('nama_lengkap')) {
             $rule_nama = 'required';
         } else {
             $rule_nama = 'required';
         }
 
         if (!$this->validate([
-            'nama' => [
+            'nama_lengkap' => [
                 'rules' => $rule_nama,
                 'errors' => [
                     'required' => '{field} nama ukm harus di isi.'
                 ]
             ]
         ])) {
-            return redirect()->to('/pendaftaran/edit/' . $this->request->getVar('slug'))->withInput();
+            return redirect()->to('edit' . $this->request->getVar('slug'))->withInput();
         }
 
 
-        $slug = url_title($this->request->getPost('nama'), '-', true);
+        $slug = url_title($this->request->getPost('nama_lengkap'), '-', true);
         $this->pendaftaranModel->save([
             'id' => $id,
-            'nama' => $this->request->getPost('nama'),
+            'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'slug' => $slug,
             'npm' => $this->request->getPost('npm'),
             'fakultas' => $this->request->getPost('fakultas'),
@@ -156,6 +156,6 @@ class Daftar extends BaseController
 
         session()->setFlashdata('pesan', 'Data Berhasil Diubah.');
 
-        return redirect()->to('/pendaftaran');
+        return redirect()->to('/daftar');
     }
 }
