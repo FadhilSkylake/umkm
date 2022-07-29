@@ -6,10 +6,7 @@ class Login extends BaseController
 {
     public function index()
     {
-        $data = [
-            'title' => 'Pendaftaran Anggota Baru UKM',
-        ];
 
-        return view('back/login');
+        return view('login/index');
     }
 }

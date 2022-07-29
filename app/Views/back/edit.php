@@ -11,14 +11,19 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <form class="user" action="/daftar/update/<?= $daftar['id']; ?>" method="POST" enctype="multipart/form-data">
+                            <?= csrf_field(); ?>
+                            <input type="hidden" name="slug" value="<?= $daftar['slug']; ?>">
                             <div class="form-group row">
                                 <div class="col-lg-10 mb-3 mb-sm-0">
                                     <label for="">Nama Lengkap</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                                    <input type="text" class="form-control <?= ($validation->hasError('nama_lengkap')) ? 'is-invalid' : ''; ?>" id="nama_lengkap" name="nama_lengkap" autofocus value="<?= (old('nama_lengkap')) ? old('nama_lengkap') : $daftar['nama_lengkap'] ?>">
+                                    <div id="validationServer03Feedback" class="invalid-feedback">
+                                        <?= $validation->getError('nama_lengkap'); ?>
+                                    </div>
                                 </div>
                                 <div class="col-lg-10 mb-3 mb-sm-0">
                                     <label for="">Nomor KTP</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                                    <input type="text" class="form-control" id="nomor_ktp" name="nomor_ktp" value="<?= (old('nomor_ktp')) ? old('nomor_ktp') : $daftar['nomor_ktp']; ?>">
                                 </div>
                                 <div class="col-lg-10 mb-3 mb-sm-0">
                                     <label for="">Tempat Tanggal Lahir</label>
@@ -126,7 +131,7 @@
                                 </div>
                             </div>
                         </form>
-                        <button class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                         <!-- <a href="/daftar/edit/<?= $daftar['slug']; ?>" class="btn btn-warning">Edit</a> -->
 
                         <form action="/daftar/<?= $daftar['id']; ?>" method="post" class="d-inline">
