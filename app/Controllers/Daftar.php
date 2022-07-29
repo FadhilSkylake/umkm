@@ -143,7 +143,7 @@ class Daftar extends BaseController
 
 
         $slug = url_title($this->request->getPost('nama_lengkap'), '-', true);
-        $this->pendaftaranModel->save([
+        $this->daftarModel->save([
             'id' => $id,
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'slug' => $slug,
