@@ -8,9 +8,8 @@ class Login extends BaseController
     {
         $data = [
             'title' => 'Pendaftaran Anggota Baru UKM',
-            'daftar' => $this->daftarModel->getDaftar()
         ];
 
-        return view('back/login', $data);
+        return view('back/login');
     }
 }

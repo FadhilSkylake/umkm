@@ -41,6 +41,8 @@ $routes->group('daftar', function ($routes) {
     $routes->get('edit/(:segment)', 'Daftar::edit/$1');
     $routes->get('(:any)', 'Daftar::detail/$1');
 });
+//Routes Login
+$routes->get('/login', 'login::index');
 
 /*
  * --------------------------------------------------------------------
