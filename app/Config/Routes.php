@@ -42,6 +42,8 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/daftar', 'Daftar::index');
 $routes->get('/daftar/edit/(:segment)', 'Daftar::edit/$1');
+$routes->post('/daftar/update/(:segment)', 'Daftar::update/$1');
+$routes->delete('/daftar/(:num)', 'Daftar::delete/$1');
 $routes->get('/daftar/(:any)', 'Daftar::detail/$1');
 
 
