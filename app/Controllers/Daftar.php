@@ -107,7 +107,7 @@ class Daftar extends BaseController
 
         $this->pendaftaranModel->delete($id);
         session()->setFlashdata('pesan', 'Data Berhasil Dihapus.');
-        return redirect()->to('/pendaftaran');
+        return redirect()->to('/daftar');
     }
 
     public function edit($slug)
@@ -134,50 +134,50 @@ class Daftar extends BaseController
             'nama_lengkap' => [
                 'rules' => $rule_nama,
                 'errors' => [
-                    'required' => '{field} nama ukm harus di isi.'
+                    'required' => '{field} nama harus di isi.'
                 ]
             ]
         ])) {
-            return redirect()->to('edit' . $this->request->getVar('slug'))->withInput();
+            return redirect()->to('/daftar/edit/' . $this->request->getVar('slug'))->withInput();
         }
 
 
-        $slug = url_title($this->request->getPost('nama_lengkap'), '-', true);
+        $slug = url_title($this->request->getVar('nama_lengkap'), '-', true);
         $this->daftarModel->save([
             'id' => $id,
-            'nama_lengkap' => $this->request->getPost('nama_lengkap'),
+            'nama_lengkap' => $this->request->getVar('nama_lengkap'),
             'slug' => $slug,
-            'nomor_ktp' => $this->request->getPost('nomor_ktp'),
-            'ttl' => $this->request->getPost('ttl'),
-            'no_tlp' => $this->request->getPost('no_tlp'),
-            'email' => $this->request->getPost('email'),
-            'pendidikan' => $this->request->getPost('pendidikan'),
-            'alamat' => $this->request->getPost('alamat'),
-            'provinsi' => $this->request->getPost('provinsi'),
-            'kabupaten' => $this->request->getPost('kabupaten'),
-            'kecamatan' => $this->request->getPost('kecamatan'),
-            'kelurahan' => $this->request->getPost('kelurahan'),
-            'kode_pos' => $this->request->getPost('kode_pos'),
-            'rtrw' => $this->request->getPost('rtrw'),
-            'nama_usaha' => $this->request->getPost('nama_usaha'),
-            'bentuk_usaha' => $this->request->getPost('bentuk_usaha'),
-            'sektor_usaha' => $this->request->getPost('sektor_usaha'),
-            'deskripsi_usaha' => $this->request->getPost('deskripsi_usaha'),
-            'wilayah_usaha' => $this->request->getPost('wilayah_usaha'),
-            'tahun_berdiri' => $this->request->getPost('tahun_berdiri'),
-            'no_telp_usaha' => $this->request->getPost('no_telp_usaha'),
-            'email_usaha' => $this->request->getPost('email_usaha'),
-            'nib' => $this->request->getPost('nib'),
-            'npwp' => $this->request->getPost('npwp'),
-            'izin_usaha' => $this->request->getPost('izin_usaha'),
-            'omzet' => $this->request->getPost('omzet'),
-            'alamat_usaha' => $this->request->getPost('alamat_usaha'),
-            'provinsi_usaha' => $this->request->getPost('provinsi_usaha'),
-            'kabupaten_usaha' => $this->request->getPost('kabupaten_usaha'),
-            'kecamatan_usaha' => $this->request->getPost('kecamatan_usaha'),
-            'kelurahan_usaha' => $this->request->getPost('kelurahan_usaha'),
-            'kode_pos_usaha' => $this->request->getPost('kode_pos_usaha'),
-            'rtrw_usaha' => $this->request->getPost('rtrw_usaha')
+            'nomor_ktp' => $this->request->getVar('nomor_ktp'),
+            'ttl' => $this->request->getVar('ttl'),
+            'no_telp' => $this->request->getVar('no_telp'),
+            'email' => $this->request->getVar('email'),
+            'pendidikan' => $this->request->getVar('pendidikan'),
+            'alamat' => $this->request->getVar('alamat'),
+            'provinsi' => $this->request->getVar('provinsi'),
+            'kabupaten' => $this->request->getVar('kabupaten'),
+            'kecamatan' => $this->request->getVar('kecamatan'),
+            'kelurahan' => $this->request->getVar('kelurahan'),
+            'kode_pos' => $this->request->getVar('kode_pos'),
+            'rtrw' => $this->request->getVar('rtrw'),
+            'nama_usaha' => $this->request->getVar('nama_usaha'),
+            'bentuk_usaha' => $this->request->getVar('bentuk_usaha'),
+            'sektor_usaha' => $this->request->getVar('sektor_usaha'),
+            'deskripsi_usaha' => $this->request->getVar('deskripsi_usaha'),
+            'wilayah_usaha' => $this->request->getVar('wilayah_usaha'),
+            'tahun_berdiri' => $this->request->getVar('tahun_berdiri'),
+            'no_telp_usaha' => $this->request->getVar('no_telp_usaha'),
+            'email_usaha' => $this->request->getVar('email_usaha'),
+            'nib' => $this->request->getVar('nib'),
+            'npwp' => $this->request->getVar('npwp'),
+            'izin_usaha' => $this->request->getVar('izin_usaha'),
+            'omzet' => $this->request->getVar('omzet'),
+            'alamat_usaha' => $this->request->getVar('alamat_usaha'),
+            'provinsi_usaha' => $this->request->getVar('provinsi_usaha'),
+            'kabupaten_usaha' => $this->request->getVar('kabupaten_usaha'),
+            'kecamatan_usaha' => $this->request->getVar('kecamatan_usaha'),
+            'kelurahan_usaha' => $this->request->getVar('kelurahan_usaha'),
+            'kode_pos_usaha' => $this->request->getVar('kode_pos_usaha'),
+            'rtrw_usaha' => $this->request->getVar('rtrw_usaha')
         ]);
 
         session()->setFlashdata('pesan', 'Data Berhasil Diubah.');

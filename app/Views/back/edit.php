@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="col-lg-10 mb-3 mb-sm-0">
                                     <label for="">No Telepon</label>
-                                    <input type="text" class="form-control" id="no_tlp" name="no_tlp" value="<?= (old('no_tlp')) ? old('no_tlp') : $daftar['no_tlp']; ?>">
+                                    <input type="text" class="form-control" id="no_telp" name="no_telp" value="<?= (old('no_telp')) ? old('no_telp') : $daftar['no_telp']; ?>">
                                 </div>
                                 <div class="col-lg-10 mb-3 mb-sm-0">
                                     <label for="">E-Mail</label>
@@ -146,14 +146,7 @@
                                     <input type="text" class="form-control" id="rtrw_usaha" name="rtrw_usaha" value="<?= (old('rtrw_usaha')) ? old('rtrw_usaha') : $daftar['rtrw_usaha']; ?>">
                                 </div>
                             </div>
-                        </form>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <!-- <a href="/daftar/edit/<?= $daftar['slug']; ?>" class="btn btn-warning">Edit</a> -->
-
-                        <form action="/daftar/<?= $daftar['id']; ?>" method="post" class="d-inline">
-                            <?= csrf_field(); ?>
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?');">Delete</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
 
                         <br><br>
