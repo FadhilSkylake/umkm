@@ -128,37 +128,6 @@
                                 <td>: <?= $daftar['rtrw_usaha']; ?></td>
                             </tr>
                         </table>
-                        <!-- <br>
-        <p class="card-text">Nama Lengkap : <?= $daftar['nama_lengkap']; ?></p>
-        <p class="card-text">Nomor ktp : <?= $daftar['nomor_ktp']; ?></p>
-        <p class="card-text">TTL : <?= $daftar['ttl']; ?></p>
-        <p class="card-text">No Telepon : <?= $daftar['no_telp']; ?></p>
-        <p class="card-text">Email : <?= $daftar['email']; ?></p>
-        <p class="card-text">Pendidikan Terakhir : <?= $daftar['pendidikan']; ?></p>
-        <p class="card-text">Alamat : <?= $daftar['alamat']; ?></p>
-        <p class="card-text">Provinsi : <?= $daftar['provinsi']; ?></p>
-        <p class="card-text">Kabupaten : <?= $daftar['kabupaten']; ?></p>
-        <p class="card-text">Kecamatan : <?= $daftar['kecamatan']; ?></p>
-        <p class="card-text">Kelurahan : <?= $daftar['kelurahan']; ?></p>
-        <p class="card-text">Kode Pos : <?= $daftar['kode_pos']; ?></p>
-        <p class="card-text">RT/RW : <?= $daftar['rtrw']; ?></p>
-        <p class="card-text">Nama Usaha : <?= $daftar['nama_usaha']; ?></p>
-        <p class="card-text">Bentuk Usaha : <?= $daftar['bentuk_usaha']; ?></p>
-        <p class="card-text">Sektor Usaha : <?= $daftar['sektor_usaha']; ?></p>
-        <p class="card-text">Deskripsi Usaha : <?= $daftar['deskripsi_usaha']; ?></p>
-        <p class="card-text">Wilayah Usaha : <?= $daftar['wilayah_usaha']; ?></p>
-        <p class="card-text">No Telp Usaha : <?= $daftar['no_telp_usaha']; ?></p>
-        <p class="card-text">Bentuk Usaha : <?= $daftar['bentuk_usaha']; ?></p>
-        <p class="card-text">Email Usaha : <?= $daftar['email_usaha']; ?></p>
-        <p class="card-text">NIB : <?= $daftar['nib']; ?></p>
-        <p class="card-text">npwp : <?= $daftar['npwp']; ?></p>
-        <p class="card-text">Omzet : <?= $daftar['omzet']; ?></p>
-        <p class="card-text">Alamat Usaha : <?= $daftar['alamat_usaha']; ?></p>
-        <p class="card-text">Provinsi Usaha : <?= $daftar['provinsi_usaha']; ?></p>
-        <p class="card-text">Kabupaten Usaha : <?= $daftar['kabupaten_usaha']; ?></p>
-        <p class="card-text">Kode Pos Usaha : <?= $daftar['kode_pos_usaha']; ?></p>
-        <p class="card-text">RT/RW Usaha : <?= $daftar['rtrw_usaha']; ?></p> -->
-
                         <a href="/daftar/edit/<?= $daftar['slug']; ?>" class="btn btn-warning">Edit</a>
 
                         <form action="/daftar/<?= $daftar['id']; ?>" method="post" class="d-inline">
