@@ -71,4 +71,20 @@
         </div>
     </div>
 </div>
+<script>
+    function previewImg() {
+        const dokumentasi = document.querySelector('#dokumentasi');
+        const dokumentasiLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        dokumentasiLabel.textContent = dokumentasi.files[0].name;
+
+        const fileDok = new FileReader();
+        fileDok.readAsDataURL(dokumentasi.files[0]);
+
+        fileDok.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 <?= $this->include('layout/footer'); ?>
