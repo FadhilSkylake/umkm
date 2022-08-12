@@ -46,6 +46,15 @@ $routes->post('/daftar/update/(:segment)', 'Daftar::update/$1');
 $routes->delete('/daftar/(:num)', 'Daftar::delete/$1');
 $routes->get('/daftar/(:any)', 'Daftar::detail/$1');
 
+$routes->group('kegiatan',  function ($routes) {
+    $routes->get('/', 'Kegiatan::index');
+    $routes->get('create', 'Kegiatan::create');
+    $routes->delete('(:num)', 'Kegiatan::delete/$1');
+    $routes->get('edit/(:segment)', 'Kegiatan::edit/$1');
+    $routes->get('save', 'Kegiatan::save');
+    $routes->get('(:any)', 'Kegiatan::detail/$1');
+});
+
 
 
 /*
