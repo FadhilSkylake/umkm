@@ -5,6 +5,9 @@
             <h6 class="m-0 font-weight-bold text-primary">
                 Data UMKM
             </h6>
+            <div>
+                <a href="/kegiatan/create" class=" btn btn-primary mt-3" id="exampleModal">Tambah Data Kegiatan</a>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
