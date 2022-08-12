@@ -80,9 +80,9 @@ class kegiatan extends BaseController
 
 
 
-        $slug = url_title($this->request->getVar('namakegiatan'), '-', true);
+        $slug = url_title($this->request->getVar('nama_kegiatan'), '-', true);
         $this->kegiatanModel->save([
-            'nama_kegiatan' => $this->request->getVar('namakegiatan'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
             'slug' => $slug,
             'deskripsi' => $this->request->getVar('deskripsi'),
             'tempat_kegiatan' => $this->request->getVar('tempat_kegiatan'),
