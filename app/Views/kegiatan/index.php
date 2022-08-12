@@ -22,17 +22,17 @@
                         </tr>
                     </thead>
                     <?php $i = 1; ?>
-                    <?php foreach ($kegiatan as $d) : ?>
+                    <?php foreach ($kegiatan as $k) : ?>
                         <tr>
                             <td> <?= $i++; ?> </td>
-                            <td> <?= $d['nama_kegiatan']; ?> </td>
-                            <td> <?= $d['deskripsi']; ?> </td>
-                            <td> <?= $d['tematp_kegiatan']; ?></td>
-                            <td> <?= $d['waktu_kegiatan']; ?> </td>
-                            <td> <?= $d['waktu_dibuat']; ?> </td>
-                            <td> <?= $d['dokumentasi']; ?> </td>
+                            <td> <?= $k['nama_kegiatan']; ?> </td>
+                            <td> <?= $k['deskripsi']; ?> </td>
+                            <td> <?= $k['tempat_kegiatan']; ?></td>
+                            <td> <?= $k['waktu_kegiatan']; ?> </td>
+                            <td> <?= $k['waktu_dibuat']; ?> </td>
+                            <td> <?= $k['dokumentasi']; ?> </td>
                             <td>
-                                <a href="/kegiatan/<?= $d['slug']; ?>" class="btn btn-success">Detail</a>
+                                <a href="/kegiatan/<?= $k['slug']; ?>" class="btn btn-success">Detail</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
