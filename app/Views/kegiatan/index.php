@@ -33,7 +33,7 @@
                             <td> <?= $k['tempat_kegiatan']; ?></td>
                             <td> <?= $k['waktu_kegiatan']; ?> </td>
                             <td> <?= $k['waktu_dibuat']; ?> </td>
-                            <td> <img sizes="100" src="/img/<?= $k['dokumentasi']; ?>"> </td>
+                            <td> <img class="circular--landscape" src="/img/<?= $k['dokumentasi']; ?>"> </td>
                             <td>
                                 <a href="/kegiatan/<?= $k['slug']; ?>" class="btn btn-success">Detail</a>
                             </td>
