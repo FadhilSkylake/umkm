@@ -58,7 +58,14 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/daftar">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>UMKM List</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/kegiatan">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Kegiatan</span></a>
             </li>
 
             <!-- Divider -->
