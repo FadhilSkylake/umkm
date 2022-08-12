@@ -1,4 +1,4 @@
-<?= $this->include('layout/topbar'); ?>s
+<?= $this->include('layout/topbar'); ?>
 <div class="main-panel">
     <div class="content-wrapper">
 

@@ -50,6 +50,7 @@ $routes->get('/kegiatan', 'Kegiatan::index');
 $routes->get('/kegiatan/create', 'Kegiatan::create');
 $routes->delete('/kegiatan/(:num)', 'Kegiatan::delete/$1');
 $routes->get('/kegiatan/edit/(:segment)', 'Kegiatan::edit/$1');
+$routes->post('/kegiatan/update/(:segment)', 'Kegiatan::update/$1');
 $routes->post('/kegiatan/save', 'Kegiatan::save');
 $routes->get('/kegiatan/(:any)', 'Kegiatan::detail/$1');
 
