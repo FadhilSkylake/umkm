@@ -13,7 +13,7 @@
                         <table class="table1 table">
                             <tr>
                                 <td>Nama Lengkap</td>
-                                <td>: <?= $daftar['nama_lengkap']; ?></td>
+                                <td>: <?= $daftar['namalengkap']; ?></td>
                             </tr>
                             <tr>
                                 <td>Nomor KTP</td>

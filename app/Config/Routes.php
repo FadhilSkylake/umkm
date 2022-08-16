@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 $routes->get('/pendaftaran', 'Pendaftaran::index');
+$routes->post('/pendaftaran/save', 'Pendaftaran::save');
 //Routes Login
 // $routes->get('/login', 'Login::index');
 

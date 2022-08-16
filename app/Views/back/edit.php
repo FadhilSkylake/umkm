@@ -16,9 +16,9 @@
                             <div class="form-group row">
                                 <div class="col-lg-10 mb-3 mb-sm-0">
                                     <label for="">Nama Lengkap</label>
-                                    <input type="text" class="form-control <?= ($validation->hasError('nama_lengkap')) ? 'is-invalid' : ''; ?>" id="nama_lengkap" name="nama_lengkap" autofocus value="<?= (old('nama_lengkap')) ? old('nama_lengkap') : $daftar['nama_lengkap'] ?>">
+                                    <input type="text" class="form-control <?= ($validation->hasError('namalengkap')) ? 'is-invalid' : ''; ?>" id="namalengkap" name="namalengkap" autofocus value="<?= (old('namalengkap')) ? old('namalengkap') : $daftar['namalengkap'] ?>">
                                     <div id="validationServer03Feedback" class="invalid-feedback">
-                                        <?= $validation->getError('nama_lengkap'); ?>
+                                        <?= $validation->getError('namalengkap'); ?>
                                     </div>
                                 </div>
                                 <div class="col-lg-10 mb-3 mb-sm-0">

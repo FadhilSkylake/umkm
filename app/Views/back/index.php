@@ -23,7 +23,7 @@
                     <?php foreach ($daftar as $d) : ?>
                         <tr>
                             <td> <?= $i++; ?> </td>
-                            <td> <?= $d['nama_lengkap']; ?> </td>
+                            <td> <?= $d['namalengkap']; ?> </td>
                             <td> <?= $d['nama_usaha']; ?> </td>
                             <td> <?= $d['sektor_usaha']; ?></td>
                             <td> <?= $d['no_telp_usaha']; ?> </td>
