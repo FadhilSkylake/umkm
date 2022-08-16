@@ -26,7 +26,7 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">UMKM</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Dafatar UMKM<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Daftar UMKM<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -35,16 +35,16 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5">
         <div class="position-relative">
-            <img class="img-fluid" src="<?= base_url(); ?>/front/img/carousel-1.jpg" alt="">
+            <video autoplay loop muted id="video-background" poster="assets/img/header-background.jpg" playsinline>
+                <source src="<?= base_url(); ?>/assets/home.mp4" type="video/mp4" />
+            </video>
+            <!-- <img class="img-fluid" src="<?= base_url(); ?>/front/img/carousel-1.jpg" alt=""> -->
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-8 text-center">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
-                            <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                            <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Selamat Datang ke Website</h5>
+                            <h1 class="display-3 text-white animated slideInDown mb-4">DINAS KOPERASI UMKM PERDAGANGAN DAN PERINDUSTRIAN</h1>
                         </div>
                     </div>
                 </div>

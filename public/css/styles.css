@@ -23,3 +23,7 @@ th {
   height: 100%;
   margin-left: -50px;
 }
+
+video {
+  size: 100%;
+}
