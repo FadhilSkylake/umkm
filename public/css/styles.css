@@ -24,6 +24,18 @@ th {
   margin-left: -50px;
 }
 
-video {
-  size: 100%;
+/* #vidtest {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 200%;
+  height: 100%;
+  z-index: -1000;
+} */
+
+.video {
+  display: block;
+  margin: auto;
 }
