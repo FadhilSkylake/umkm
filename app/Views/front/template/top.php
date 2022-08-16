@@ -30,4 +30,5 @@
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url(); ?>/front/css/style.css" rel="stylesheet">
+
 </head>

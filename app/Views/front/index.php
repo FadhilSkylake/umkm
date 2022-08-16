@@ -1,5 +1,12 @@
 <?= $this->include('front/template/top'); ?>
 
+<style>
+    video {
+        display: block;
+        margin: auto;
+    }
+</style>
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -40,6 +47,7 @@
             </video>
             <!-- <img class="img-fluid" src="<?= base_url(); ?>/front/img/carousel-1.jpg" alt=""> -->
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
+
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-8 text-center">
