@@ -42,6 +42,7 @@ $routes->get('/login', 'Login::index');
 $routes->get('/pendaftaran', 'Pendaftaran::index');
 $routes->post('/pendaftaran/save', 'Pendaftaran::save');
 
+$routes->get('/umkm', 'Umkm::index');
 
 $routes->get('/daftar', 'Daftar::index');
 $routes->get('/daftar/edit/(:segment)', 'Daftar::edit/$1');
