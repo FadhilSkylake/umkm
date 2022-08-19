@@ -37,7 +37,7 @@
     <script src="<?= base_url(); ?>/form/vendor/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->
     <script src="<?= base_url(); ?>/form/vendor/bootstrap/js/popper.js"></script>
-    <script src="<?= base_url(); ?>//formvendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>/formvendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
     <script src="<?= base_url(); ?>/form/vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->

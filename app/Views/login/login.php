@@ -4,41 +4,56 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
         <div class="wrap-login100">
-            <form class="login100-form validate-form">
-                <span class="login100-form-logo">
-                    <i class="zmdi zmdi-landscape"></i>
-                </span>
+            <span class="login100-form-title p-b-34 p-t-27">
+                <?= lang('Auth.loginTitle') ?>
+            </span>
+            <?= view('Myth\Auth\Views\_message_block') ?>
 
-                <span class="login100-form-title p-b-34 p-t-27">
-                    Log in
-                </span>
+            <form class="login100-form validate-form" action="<?= url_to('login') ?>" method="post">
+                <?= csrf_field() ?>
 
-                <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="text" name="username" placeholder="Username">
-                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                </div>
-
+                <?php if ($config->validFields === ['email']) : ?>
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <label for="login"><?= lang('Auth.email') ?></label>
+                        <input class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" type="email" name="login" placeholder="<?= lang('Auth.email') ?>">
+                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                        <div class="invalid-feedback">
+                            <?= session('errors.login') ?>
+                        </div>
+                    </div>
+                <?php else : ?>
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <input class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" type="text" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>">
+                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                        <div class="invalid-feedback">
+                            <?= session('errors.login') ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input class="input100" type="password" name="password" placeholder="<?= lang('Auth.password') ?>">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    <div class="invalid-feedback">
+                        <?= session('errors.password') ?>
+                    </div>
                 </div>
-
-                <div class="contact100-form-checkbox">
-                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                    <label class="label-checkbox100" for="ckb1">
-                        Remember me
-                    </label>
-                </div>
-
+                <?php if ($config->allowRemembering) : ?>
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
+                        <?php if (old('remember')) : ?> checked <?php endif ?>>
+                            <?= lang('Auth.rememberMe') ?>
+                            <label class="label-checkbox100" for="ckb1">
+                                Remember me
+                            </label>
+                    </div>
+                <?php endif; ?>
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Login
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.loginAction') ?></button>
                 </div>
 
                 <div class="text-center p-t-90">
                     <a class="txt1" href="#">
-                        Forgot Password?
+
                     </a>
                 </div>
             </form>

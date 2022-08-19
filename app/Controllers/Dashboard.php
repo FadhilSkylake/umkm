@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\KegiatanModel;
 use App\Models\DaftarModel;
 
-class Home extends BaseController
+class Dashboard extends BaseController
 {
     protected $kegiatanModel;
 
@@ -23,6 +23,6 @@ class Home extends BaseController
             'daftar' => $this->daftarModel->countAllResults()
         ];
 
-        return view('front/index', $data);
+        return view('back/dashboard/index', $data);
     }
 }
