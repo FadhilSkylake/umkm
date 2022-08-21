@@ -39,6 +39,7 @@ $routes->get('/', 'Home::index');
 //Routes Login
 // $routes->get('/login', 'Login::index');
 
+$routes->get('/umkm', 'Umkm::index');
 $routes->get('/pendaftaran', 'Pendaftaran::index');
 $routes->post('/pendaftaran/save', 'Pendaftaran::save');
 

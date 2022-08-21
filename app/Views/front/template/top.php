@@ -64,7 +64,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="/" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">UMKM</a>
+                <a href="/umkm" class="nav-item nav-link">UMKM</a>
             </div>
             <a href="/pendaftaran" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Daftar UMKM<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
