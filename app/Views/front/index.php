@@ -36,7 +36,16 @@
                     <div class="section-title text-start">
                         <h1 class="display-5 mb-4">Tentang Dinas</h1>
                     </div>
-                    <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                    <p class="mb-4 pb-2" style="text-align: justify;">Dinas Koperasi, UMKM dan Perindustrian mempunyai tugas pokok melaksanakan sebagian urusan Pemerintahan Daerah berdasarkan azas otonomi dan pembantuan di bidang Koperasi, UMKM dan Perindustrian.
+
+                        Untuk melaksanakan tugas pokok tersebut Dinas Koperasi, UMKM dan Perindustrian mempunyai fungsi :
+
+                        Perumusan kebijakan teknis di bidang sekretariat , Koperasi , UMKM dan Perindustrian
+                        Penyelenggraaan urusan pemerintahan dan pelayanan umum di bidang Sekretariat, Koperasi, UMKM dan Perindustrian.
+                        Pembinaan dan pelaksanaan tugas di bidang Sekretariat Koperasi, UMKM dan Perindustrian
+                        Penyelenggaraan kesekretariatan Dinas.
+                        Pembinaan, pengendalian, pengawasan dan koordinasi.
+                        Pelaksanaan tugas lain yang diberikan oleh Walikota sesuai dengan tugas pokok dan fungsinya.</p>
                     <div class="row g-4 mb-4 pb-2">
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="d-flex align-items-center">

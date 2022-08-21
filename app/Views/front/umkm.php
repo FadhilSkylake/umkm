@@ -12,24 +12,20 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th> No </th>
-                            <th> Nama Lengkap </th>
                             <th> nama usaha </th>
                             <th> Sektor Usaha </th>
-                            <th> no telepon </th>
+                            <th> Alamat Usaha </th>
                         </tr>
                     </thead>
-                    <?php $i = 1; ?>
                     <?php foreach ($daftar as $d) : ?>
                         <tr>
-                            <td> <?= $i++; ?> </td>
-                            <td> <?= $d['namalengkap']; ?> </td>
                             <td> <?= $d['nama_usaha']; ?> </td>
-                            <td> <?= $d['sektor_usaha']; ?></td>
-                            <td> <?= $d['no_telp_usaha']; ?> </td>
+                            <td> <?= $d['sektor_usaha']; ?> </td>
+                            <td> <?= $d['alamat_usaha']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>
+                <p>asd</p>
             </div>
         </div>
     </div>
