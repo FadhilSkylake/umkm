@@ -216,6 +216,19 @@
                                 <label for="nib">Nomor izin Berusaha (NIB)</label>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="nib_img" class="col-sm-2 col-form-label">Foto NIB</label>
+                            <div class="col-sm-2">
+                                <img src="img/default.jpg" class="img-thumbnail img-preview">
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="file" class="custom-file-input <?= ($validation->hasError('nib_img')) ? 'is-invalid' : ''; ?>" id="nib_img" name="nib_img" onchange="previewImg()">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('nib_img'); ?>
+                                </div>
+                                <label class="custom-file-label" for="nib_img">Pilih gambar</label>
+                            </div>
+                        </div>
                         <div class="col-12">
                             <div class="form-floating">
                                 <input type="text" class="form-control <?= ($validation->hasError('npwp')) ? 'is-invalid' : ''; ?>" id="npwp" placeholder="Nomor Pokok Wajib Pajak (NPWP)" name="npwp" autofocus>
@@ -315,5 +328,21 @@
         </div>
     </div>
 </div>
+<script>
+    function previewImg() {
+        const nib_img = document.querySelector('#nib_img');
+        const nibLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        nibLabel.textContent = nib_img.files[0].name;
+
+        const fileNib = new FileReader();
+        fileNib.readAsDataURL(nib_img.files[0]);
+
+        fileNib.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 <!-- Contact End -->
 <?= $this->include('front/template/bot'); ?>

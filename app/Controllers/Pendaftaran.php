@@ -60,6 +60,19 @@ class Pendaftaran extends BaseController
         //     return redirect()->to('formpendaftaran')->withInput();
         // }
 
+        $fileNib = $this->request->getFile('nib_img');
+
+        //cek gambar, apakah tetap gambar lama
+        if ($fileNib->getError() == 4) {
+            $namaNib = $this->request->getVar('nibLama');
+        } else {
+            //generate nama file random
+            $namaNib = $fileNib->getRandomName();
+            //pindahkan gambar
+            $fileNib->move('img', $namaNib);
+            //hapus file lama
+            // unlink('img/' . $this->request->getVar('nibLama'));
+        }
 
         $slug = url_title($this->request->getPost('namalengkap'), '-', true);
         $this->daftarModel->save([
@@ -95,7 +108,8 @@ class Pendaftaran extends BaseController
             'kecamatan_usaha' => $this->request->getPost('kecamatan_usaha'),
             'kelurahan_usaha' => $this->request->getPost('kelurahan_usaha'),
             'kode_pos_usaha' => $this->request->getPost('kode_pos_usaha'),
-            'rtrw_usaha' => $this->request->getPost('rtrw_usaha')
+            'rtrw_usaha' => $this->request->getPost('rtrw_usaha'),
+            'nib_img' => $namaNib
         ]);
 
         session()->setFlashdata('pesan', 'Berhasil Daftar');
