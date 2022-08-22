@@ -6,7 +6,7 @@
             <div class="col-md-10 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="my-3">Form Tambah Data Kegiatan UMKM</h2>
+                        <h2 class="my-3">Form Tambah Kegiatan UMKM</h2>
                         <form action="/kegiatan/save" method="POST" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="slug" value="">

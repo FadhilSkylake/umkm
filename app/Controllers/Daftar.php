@@ -124,14 +124,14 @@ class Daftar extends BaseController
     public function update($id)
     {
         $daftarLama = $this->daftarModel->getDaftar($this->request->getVar('slug'));
-        if ($daftarLama['nama_lengkap'] == $this->request->getVar('nama_lengkap')) {
+        if ($daftarLama['namalengkap'] == $this->request->getVar('namalengkap')) {
             $rule_nama = 'required';
         } else {
             $rule_nama = 'required';
         }
 
         if (!$this->validate([
-            'nama_lengkap' => [
+            'namalengkap' => [
                 'rules' => $rule_nama,
                 'errors' => [
                     'required' => '{field} nama harus di isi.'
