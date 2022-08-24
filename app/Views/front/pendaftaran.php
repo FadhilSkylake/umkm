@@ -20,6 +20,24 @@
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="form-floating">
+                                <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" id="username" placeholder="Nama Lengkap" name="username" autofocus>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('username'); ?>
+                                </div>
+                                <label for="namalengkap">Username</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="password" class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" id="password" placeholder="Nama Lengkap" name="password" autofocus>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('password'); ?>
+                                </div>
+                                <label for="namalengkap">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
                                 <input type="text" class="form-control <?= ($validation->hasError('namalengkap')) ? 'is-invalid' : ''; ?>" id="namalengkap" placeholder="Nama Lengkap" name="namalengkap" autofocus>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('namalengkap'); ?>

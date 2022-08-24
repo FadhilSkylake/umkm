@@ -17,4 +17,20 @@ class DaftarModel extends Model
 
         return $this->where(['slug' => $slug])->first();
     }
+
+    public function NyokotDataTerakhir()
+    {
+        $builder = $this->db->table('daftar');
+        $builder->limit(1)->orderBy('id', 'desc');
+        return $builder->get()->getRowArray();
+    }
+
+    public function gantiDataDaftar($id, $data)
+    {
+        $this->set('nama_usaha', $data['nama_usaha']);
+        $this->set('slug', $data['slug']);
+        $this->set('namalengkap', $data['namalengkap']);
+        $this->where('id', $id);
+        return $this->update();
+    }
 }

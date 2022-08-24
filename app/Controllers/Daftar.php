@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \App\Models\DaftarModel;
+use \App\Models\UserModel;
 
 class Daftar extends BaseController
 {
@@ -10,13 +11,16 @@ class Daftar extends BaseController
     public function __construct()
     {
         $this->daftarModel = new DaftarModel();
+        $this->userModel = new UserModel();
     }
 
     public function index()
     {
+        $session = session();
         $data = [
             'title' => 'Pendaftaran Anggota Baru UKM',
-            'daftar' => $this->daftarModel->getDaftar()
+            'daftar' => $this->daftarModel->getDaftar(),
+            'user' => $this->userModel->find($session->get('id'))
         ];
 
         return view('back/index', $data);
@@ -24,9 +28,11 @@ class Daftar extends BaseController
 
     public function detail($slug)
     {
+        $session = session();
         $data = [
             'title' => 'Detail Pendaftar',
-            'daftar' => $this->daftarModel->getDaftar($slug)
+            'daftar' => $this->daftarModel->getDaftar($slug),
+            'user' => $this->userModel->find($session->get('id'))
         ];
 
         //jika data enggak ada
@@ -39,9 +45,11 @@ class Daftar extends BaseController
 
     public function create()
     {
+        $session = session();
         $data = [
             'title' => 'Form Tambah Data Pendaftaran',
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'user' => $this->userModel->find($session->get('id'))
         ];
 
         return view('back/pendaftaran/create', $data);
@@ -112,10 +120,12 @@ class Daftar extends BaseController
 
     public function edit($slug)
     {
+        $session = session();
         $data = [
             'title' => 'Form Edit Pendaftar',
             'validation' => \Config\Services::validation(),
-            'daftar' => $this->daftarModel->getDaftar($slug)
+            'daftar' => $this->daftarModel->getDaftar($slug),
+            'user' => $this->userModel->find($session->get('id'))
         ];
 
         return view('back/edit', $data);

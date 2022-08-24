@@ -21,6 +21,7 @@
 
     <!-- Custom styles for this page -->
     <link href="<?= base_url(); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -48,28 +49,39 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+            <?php if ($user['role_id'] == 1) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+                <!-- Divider -->
+                <hr class="sidebar-divider">
 
+                <!-- Nav Item - Tables -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/daftar">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>UMKM List</span></a>
+                </li>
 
-            <!-- Nav Item - Tables -->
+                <!-- Nav Item - Tables -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/kegiatan">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Kegiatan</span></a>
+                </li>
+            <?php endif; ?>
             <li class="nav-item active">
-                <a class="nav-link" href="/daftar">
+                <a class="nav-link" href="/kelola">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>UMKM List</span></a>
+                    <span>Kelola Profile</span></a>
             </li>
-
-            <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="/kegiatan">
+                <a class="nav-link" href="/logout">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Kegiatan</span></a>
+                    <span>Logout </span></a>
             </li>
 
             <!-- Divider -->

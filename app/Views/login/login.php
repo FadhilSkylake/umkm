@@ -9,27 +9,16 @@
             </span>
             <?= view('Myth\Auth\Views\_message_block') ?>
 
-            <form class="login100-form validate-form" action="<?= url_to('login') ?>" method="post">
+            <form class="login100-form validate-form" action="/login" method="post">
                 <?= csrf_field() ?>
 
-                <?php if ($config->validFields === ['email']) : ?>
-                    <div class="wrap-input100 validate-input" data-validate="Enter username">
-                        <label for="login"><?= lang('Auth.email') ?></label>
-                        <input class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" type="email" name="login" placeholder="<?= lang('Auth.email') ?>">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                        <div class="invalid-feedback">
-                            <?= session('errors.login') ?>
-                        </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter username">
+                    <input class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" type="text" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                    <div class="invalid-feedback">
+                        <?= session('errors.login') ?>
                     </div>
-                <?php else : ?>
-                    <div class="wrap-input100 validate-input" data-validate="Enter username">
-                        <input class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" type="text" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                        <div class="invalid-feedback">
-                            <?= session('errors.login') ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
+                </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
                     <input class="input100" type="password" name="password" placeholder="<?= lang('Auth.password') ?>">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>

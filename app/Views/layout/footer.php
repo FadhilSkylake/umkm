@@ -40,6 +40,12 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url(); ?>/js/demo/datatables-demo.js"></script>
 <script src="https://kit.fontawesome.com/e24ca0ff2a.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
 
 </body>
 

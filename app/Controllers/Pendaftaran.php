@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
+use \App\Models\UserModel;
 use \App\Models\DaftarModel;
 
 class Pendaftaran extends BaseController
 {
     protected $daftarModel;
+    protected $userModel;
     public function __construct()
     {
         $this->daftarModel = new DaftarModel();
+        $this->userModel = new UserModel();
     }
 
     public function index()
@@ -111,9 +114,19 @@ class Pendaftaran extends BaseController
             'rtrw_usaha' => $this->request->getPost('rtrw_usaha'),
             'nib_img' => $namaNib
         ]);
+        $data = $this->daftarModel->NyokotDataTerakhir();
+
+        $this->userModel->save([
+            'username' => $this->request->getPost('username'),
+            'password_hash' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'email' => $this->request->getPost('email'),
+            'fullname' => $this->request->getPost('namalengkap'),
+            'daftar_id' => $data['id'],
+            'role_id' => 2
+        ]);
 
         session()->setFlashdata('pesan', 'Berhasil Daftar');
 
-        return redirect()->to('/pendaftaran');
+        return redirect()->to('/login');
     }
 }

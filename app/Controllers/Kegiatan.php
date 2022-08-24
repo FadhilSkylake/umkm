@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \App\Models\KegiatanModel;
+use App\Models\UserModel;
 
 class kegiatan extends BaseController
 {
@@ -10,13 +11,16 @@ class kegiatan extends BaseController
     public function __construct()
     {
         $this->kegiatanModel = new KegiatanModel();
+        $this->userModel = new UserModel();
     }
 
     public function index()
     {
+        $session = session();
         $data = [
-            'title' => 'Dapur Musik',
-            'kegiatan' => $this->kegiatanModel->getKegiatan()
+            'title' => 'Kelola Kegiatan',
+            'kegiatan' => $this->kegiatanModel->getKegiatan(),
+            'user' => $this->userModel->find($session->get('id'))
         ];
         return view('kegiatan/index', $data);
         // return view('template/index');
@@ -24,9 +28,11 @@ class kegiatan extends BaseController
 
     public function detail($slug)
     {
+        $session = session();
         $data = [
             'title' => 'Detail Kegiatan',
-            'kegiatan' => $this->kegiatanModel->getKegiatan($slug)
+            'kegiatan' => $this->kegiatanModel->getKegiatan($slug),
+            'user' => $this->userModel->find($session->get('id'))
         ];
 
         //jika data enggak ada
@@ -39,9 +45,11 @@ class kegiatan extends BaseController
 
     public function create()
     {
+        $session = session();
         $data = [
-            'title' => 'Dapur Musik',
-            'validation' => \Config\Services::validation()
+            'title' => 'Tambah Kegiatan',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->userModel->find($session->get('id'))
         ];
         return view('kegiatan/create', $data);
         // return view('template/index');
@@ -115,10 +123,12 @@ class kegiatan extends BaseController
 
     public function edit($slug)
     {
+        $session = session();
         $data = [
-            'title' => 'Dapur Musik',
+            'title' => 'Edit Kegiatan',
             'validation' => \Config\Services::validation(),
-            'kegiatan' => $this->kegiatanModel->getKegiatan($slug)
+            'kegiatan' => $this->kegiatanModel->getKegiatan($slug),
+            'user' => $this->userModel->find($session->get('id'))
         ];
         return view('kegiatan/edit', $data);
         // return view('template/index');
