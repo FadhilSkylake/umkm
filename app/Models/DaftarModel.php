@@ -27,9 +27,37 @@ class DaftarModel extends Model
 
     public function gantiDataDaftar($id, $data)
     {
-        $this->set('nama_usaha', $data['nama_usaha']);
         $this->set('slug', $data['slug']);
         $this->set('namalengkap', $data['namalengkap']);
+        $this->set('nomor_ktp', $data['nomor_ktp']);
+        $this->set('ttl', $data['ttl']);
+        $this->set('no_telp', $data['no_telp']);
+        $this->set('email', $data['email']);
+        $this->set('pendidikan', $data['pendidikan']);
+        $this->set('alamat', $data['alamat']);
+        $this->set('provinsi', $data['provinsi']);
+        $this->set('kabupaten', $data['kabupaten']);
+        $this->set('kecamatan', $data['kecamatan']);
+        $this->set('kelurahan', $data['kelurahan']);
+        $this->set('kode_pos', $data['kode_pos']);
+        $this->set('rtrw', $data['rtrw']);
+        $this->set('nama_usaha', $data['nama_usaha']);
+        $this->set('bentuk_usaha', $data['bentuk_usaha']);
+        $this->set('sektor_usaha', $data['sektor_usaha']);
+        $this->set('deskripsi_usaha', $data['deskripsi_usaha']);
+        $this->set('wilayah_usaha', $data['wilayah_usaha']);
+        $this->set('tahun_berdiri', $data['tahun_berdiri']);
+        $this->set('no_telp_usaha', $data['no_telp_usaha']);
+        $this->set('email_usaha', $data['email_usaha']);
+        $this->set('nib', $data['nib']);
+        $this->set('npwp', $data['npwp']);
+        $this->set('izin_usaha', $data['izin_usaha']);
+        $this->set('provinsi_usaha', $data['provinsi_usaha']);
+        $this->set('kabupaten_usaha', $data['kabupaten_usaha']);
+        $this->set('kecamatan_usaha', $data['kecamatan_usaha']);
+        $this->set('kelurahan_usaha', $data['kelurahan_usaha']);
+        $this->set('kode_pos_usaha', $data['kode_pos_usaha']);
+        $this->set('rtrw_usaha', $data['rtrw_usaha']);
         $this->where('id', $id);
         return $this->update();
     }
