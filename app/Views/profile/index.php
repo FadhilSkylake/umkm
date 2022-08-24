@@ -7,7 +7,7 @@
             </h6>
         </div>
         <div class="card-body">
-            <form action="/kelola/update/<?= $user['id'] ?>" method="post">
+            <form action="/kelola/update/<?= $user['id'] ?>" method="POST" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
 
                 <div class="col-12">
@@ -163,11 +163,21 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="form-floating">
-                        <label for="nib">NIB</label>
-                        <input type="hidden" name="slug" value="">
-                        <input type="text" class="form-control" id="nib" placeholder="NIB" name="nib" autofocus value="<?= $umkm['nib']; ?>">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-floating">
+                                <label for="nib">NIB</label>
+                                <input type="hidden" name="slug" value="">
+                                <input type="text" class="form-control" id="nib" placeholder="NIB" name="nib" autofocus value="<?= $umkm['nib']; ?>">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="nib">Foto NIB</label>
+                            <input type="file" class="form-control" id="nib_img" placeholder="NIB" name="nib_img" autofocus value="<?= $umkm['nib_img']; ?>">
+
+                        </div>
                     </div>
+
                 </div>
                 <div class="col-12">
                     <div class="form-floating">

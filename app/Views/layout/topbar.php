@@ -12,7 +12,7 @@
     <title>Web DKUPP SUBANG</title>
 
     <!-- Custom fonts for this template -->
-    <link href="<?= base_url(); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url(); ?>/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -20,7 +20,7 @@
     <link href="<?= base_url(); ?>/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="<?= base_url(); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
@@ -47,6 +47,11 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+
+                <span class="nav-link"><?= $user['username'] ?></span>
+            </li>
+            <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <?php if ($user['role_id'] == 1) : ?>
@@ -72,17 +77,26 @@
                         <i class="fas fa-fw fa-table"></i>
                         <span>Kegiatan</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/daftar">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>UMKM List</span></a>
+                </li>
             <?php endif; ?>
-            <li class="nav-item active">
-                <a class="nav-link" href="/kelola">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Kelola Profile</span></a>
-            </li>
+            <?php if ($user['role_id'] == 2) : ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/kelola">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Kelola Profile</span></a>
+                </li>
+
+            <?php endif; ?>
             <li class="nav-item active">
                 <a class="nav-link" href="/logout">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Logout </span></a>
             </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

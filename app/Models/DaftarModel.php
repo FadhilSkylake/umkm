@@ -58,6 +58,10 @@ class DaftarModel extends Model
         $this->set('kelurahan_usaha', $data['kelurahan_usaha']);
         $this->set('kode_pos_usaha', $data['kode_pos_usaha']);
         $this->set('rtrw_usaha', $data['rtrw_usaha']);
+        if (count($data) == 34) {
+            $this->set('nib_img', $data['nib_img']);
+        }
+
         $this->where('id', $id);
         return $this->update();
     }

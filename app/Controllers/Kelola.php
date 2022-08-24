@@ -26,7 +26,12 @@ class Kelola extends BaseController
 
     public function update($id)
     {
+        $file = $this->request->getFile('nib_img');
         $dataDiri = $this->userModel->find($id);
+        if ($file->getError() != 4) {
+            $dataDaftar = $this->daftarModel->find($dataDiri['daftar_id']);
+            unlink('img/' . $dataDaftar['nib_img']);
+        }
 
         $data = [
             'username' => $this->request->getVar('username'),
@@ -66,9 +71,15 @@ class Kelola extends BaseController
             'kecamatan_usaha' => $this->request->getVar('kecamatan_usaha'),
             'kelurahan_usaha' => $this->request->getVar('kelurahan_usaha'),
             'kode_pos_usaha' => $this->request->getVar('kode_pos_usaha'),
-            'rtrw_usaha' => $this->request->getVar('rtrw_usaha')
-
+            'rtrw_usaha' => $this->request->getVar('rtrw_usaha'),
         ];
+        if ($file->getError() != 4) {
+            $ngaranNib = $file->getRandomName();
+            $data2['nib_img'] = $ngaranNib;
+            // dd($data2);
+            $file->move('img', $ngaranNib);
+        }
+
         $this->daftarModel->gantiDataDaftar($dataDiri['daftar_id'], $data2);
 
         return redirect()->to('/kelola');
